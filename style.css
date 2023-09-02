@@ -34,8 +34,8 @@ button{
 }
 
 #cover {
-    width: 450px;
-    border: 10px solid white
+    width: 400px;
+    border: 8px solid white
 }
 #playlist-title{
     display: flex;
