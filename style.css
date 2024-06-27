@@ -1,15 +1,15 @@
 body {
-    background-image: linear-gradient(rgb(39, 92, 51),
-            rgb(31, 60, 57));
+    background-image: linear-gradient(to left,rgb(39, 92, 51), rgb(31, 60, 57),rgb(39, 92, 51), rgb(31, 60, 57),rgb(39, 92, 51), rgb(31, 60, 57),rgb(39, 92, 51), rgb(31, 60, 57),rgb(39, 92, 51), rgb(31, 60, 57), rgb(39, 92, 51), rgb(31, 60, 57),rgb(39, 92, 51), rgb(31, 60, 57));
     height: 100vh;
     color: white;
     font-family: sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 1em; /* Adicionado para melhorar o espaçamento em dispositivos móveis */
 }
 
-button{
+button {
     background-color: inherit;
     color: inherit;
     border: none;
@@ -22,7 +22,6 @@ button{
     justify-content: space-between;
     align-items: center;
     margin: 3em 0 1em 0;
-    
 }
 
 #button-container {
@@ -30,39 +29,42 @@ button{
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    
 }
 
 #cover {
-    width: 400px;
-    border: 8px solid white
+    width: 450px;
+    max-width: 100%; /* Adicionado para garantir que a imagem se ajuste à tela menor */
+    border: 10px solid white;
 }
-#playlist-title{
+
+#playlist-title {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 1em 0em 4em 0em;
+    margin: 1em 0 4em 0;
 }
-#song-name{
+
+#song-name {
     font-size: 1.8em;
     font-weight: bolder;
 }
-#progress-bar{
-    background-color:  rgb(139, 153, 156) ;
+
+#progress-bar {
+    background-color: rgb(139, 153, 156);
     height: 5px;
     width: 100%;
     border-radius: 15px;
-       
 }
-#current-progress{
+
+#current-progress {
     --progress: 0%;
     background-color: white;
     height: inherit;
     width: var(--progress);
     border-radius: inherit;
-
 }
-#progress-container{
+
+#progress-container {
     cursor: pointer;
 }
 
@@ -74,10 +76,17 @@ button{
     margin-top: 0.5em;
 }
 
-#logo{
-    width: 400px;
-    height: 17em;
-    
+#logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#logo {
+    width: 200px; /* Diminuído para 200px */
+    height: auto; /* Definido como auto para manter a proporção */
+    max-width: 100%;
 }
 
 /* E a class se identifica com o . */
@@ -93,10 +102,69 @@ button{
 .button-biggest {
     font-size: 3em;
 }
-.light-color{
+
+.light-color {
     color: rgb(139, 153, 156);
 }
 
 .button-active {
-    color: rgb(0, 183, 107)
+    color: rgb(0, 183, 107);
+}
+
+/* Footer styling */
+footer {
+    margin-top: 2em; /* Espaçamento maior entre o footer e o resto do conteúdo */
+    padding: 1em;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em; /* Espaço entre a logo e o texto */
+}
+
+#footer-logo {
+    width: 30px; /* Diminuído para 30px */
+    height: auto; /* Definido como auto para manter a proporção */
+}
+
+/* Media Queries para dispositivos móveis */
+@media (max-width: 600px) {
+    #below-cover {
+        flex-direction: column;
+        margin: 12px 0;
+    }
+
+    #button-container {
+        flex-direction: flex;
+    }
+
+    #cover {
+        width: 100%;
+        border-width: 5px; /* Ajustado para telas menores */
+    }
+
+    #song-name {
+        font-size: 1.5em;
+        font-weight: bolder;
+    }
+
+    .button {
+        font-size: 1.2em;
+    }
+
+    .button-navigate {
+        font-size: 30px;
+    }
+
+    .button-biggest {
+        font-size: 30px;
+    }
+
+    footer {
+        font-size: 0.8em;
+        padding: 0.5em;
+    }
 }
